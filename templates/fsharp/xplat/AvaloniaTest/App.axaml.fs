@@ -20,6 +20,8 @@ type App() =
         match this.ApplicationLifetime with
         | :? IClassicDesktopStyleApplicationLifetime as desktopLifetime ->
             desktopLifetime.MainWindow <- MainWindow(DataContext = MainViewModel())
+        | :? IActivityApplicationLifetime as singleViewFactoryApplicationLifetime ->
+            singleViewFactoryApplicationLifetime.MainViewFactory <- fun () -> MainView(DataContext = MainViewModel())
         | :? ISingleViewApplicationLifetime as singleViewLifetime ->
             singleViewLifetime.MainView <- MainView(DataContext = MainViewModel())
         | _ -> ()
