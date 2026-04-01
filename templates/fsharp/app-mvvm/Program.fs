@@ -12,8 +12,12 @@ module Program =
     let buildAvaloniaApp () = 
         AppBuilder
             .Configure<App>()
-            .UsePlatformDetect()
             .WithInterFont()
+//-:cnd:noEmit
+#if DEBUG
+            .WithDeveloperTools()
+#endif
+//+:cnd:noEmit
             .LogToTrace(areas = Array.empty)
 #if (ReactiveUIToolkitChosen)
             .UseReactiveUI()

@@ -17,13 +17,6 @@ type App() =
             AvaloniaXamlLoader.Load(this)
 
     override this.OnFrameworkInitializationCompleted() =
-
-#if (CommunityToolkitChosen)
-        // Line below is needed to remove Avalonia data validation.
-        // Without this line you will get duplicate validations from both Avalonia and CT
-        BindingPlugins.DataValidators.RemoveAt(0)
-#endif
-
         match this.ApplicationLifetime with
         | :? IClassicDesktopStyleApplicationLifetime as desktop ->
              desktop.MainWindow <- MainWindow(DataContext = MainWindowViewModel())

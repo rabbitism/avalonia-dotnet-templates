@@ -1,0 +1,11 @@
+﻿<Solution>
+  <Project Path="AvaloniaTest.Android/AvaloniaTest.Android.fsproj">
+    <Deploy />
+  </Project>
+  <Project Path="AvaloniaTest.Browser/AvaloniaTest.Browser.fsproj" />
+  <Project Path="AvaloniaTest.Desktop/AvaloniaTest.Desktop.fsproj" />
+  <Project Path="AvaloniaTest.iOS/AvaloniaTest.iOS.fsproj">
+    <Deploy />
+  </Project>
+  <Project Path="AvaloniaTest/AvaloniaTest.fsproj" />
+</Solution>

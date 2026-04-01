@@ -19,6 +19,11 @@ sealed class Program
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
+//-:cnd:noEmit
+#if DEBUG
+            .WithDeveloperTools()
+#endif
+//+:cnd:noEmit
             .WithInterFont()
 #if (ReactiveUIToolkitChosen)
             .LogToTrace()

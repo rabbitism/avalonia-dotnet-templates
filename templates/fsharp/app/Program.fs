@@ -10,6 +10,11 @@ module Program =
         AppBuilder
             .Configure<App>()
             .UsePlatformDetect()
+//-:cnd:noEmit
+#if DEBUG
+            .WithDeveloperTools()
+#endif
+//+:cnd:noEmit
             .WithInterFont()
             .LogToTrace(areas = Array.empty)
 

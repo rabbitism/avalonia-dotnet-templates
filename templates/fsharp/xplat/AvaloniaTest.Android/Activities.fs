@@ -16,11 +16,4 @@ open AvaloniaTest
     MainLauncher = true,
     ConfigurationChanges = (ConfigChanges.Orientation ||| ConfigChanges.ScreenSize ||| ConfigChanges.UiMode))>]
 type MainActivity() =
-    inherit AvaloniaMainActivity<App>()
-
-    override _.CustomizeAppBuilder(builder) =
-        base.CustomizeAppBuilder(builder)
-            .WithInterFont()
-#if (ReactiveUIToolkitChosen)
-            .UseReactiveUI()
-#endif
+    inherit AvaloniaMainActivity()
